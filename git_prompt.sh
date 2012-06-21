@@ -63,9 +63,9 @@ function set_git_prompt {
       branch="\[\e[0;36m\]waiting for first commit\[\e[0m\]"
     fi
     if [ $flags ]; then
-      PS1="${BGP_ORIGINAL_PS1/\\$ /}(${minutes_since_last_commit}${branch}|\[\e[0;35m\]${flags}\[\e[0m\])$BGP_GIT_REMOTE_STATUS\$ "
+      PS1="${minutes_since_last_commit}${branch}|\[\e[0;35m\]${flags}\[\e[0m\] $BGP_GIT_REMOTE_STATUS${BGP_ORIGINAL_PS1/\\$ /}$ "
     else
-      PS1="${BGP_ORIGINAL_PS1/\\$ /}(${minutes_since_last_commit}${branch})$BGP_GIT_REMOTE_STATUS\$ "
+      PS1="${minutes_since_last_commit}${branch} $BGP_GIT_REMOTE_STATUS${BGP_ORIGINAL_PS1/\\$ /}$ "
     fi
   else
     PS1=$BGP_ORIGINAL_PS1
